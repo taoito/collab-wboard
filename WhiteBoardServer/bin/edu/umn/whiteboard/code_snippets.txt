@@ -1,0 +1,87 @@
+______________________________________________
+ServerSettings.onClick(View v)
+______________________________________________
+
+	@Override
+	public void onClick(View v) {
+		switch (v.getId()) {
+		case R.id.settingsOk:
+			//proxyAddress = addressField.getText().toString();
+			//proxyPort = Integer.parseInt(portField.getText().toString());
+			//proxyAddress = "172.16.131.55";
+			//proxyPort = 19002;
+			
+			//keep only the server code since we are not dealing with proxies
+			//serverAddress = addressField.getText().toString();
+			//serverPort = Integer.parseInt(portField.getText().toString());
+			serverAddress = "10.0.2.2";
+			serverPort = 19002;
+			try {				
+				//Socket socket2proxy = new Socket(proxyAddress,proxyPort);
+				//Socket socket2proxy = new Socket(serverAddress,serverPort);
+				
+				socket2server = new Socket(serverAddress,serverPort);
+				// Send a message to the client application
+				//ObjectOutputStream os = new ObjectOutputStream(socket2server.getOutputStream());
+				oos = new ObjectOutputStream(socket2server.getOutputStream());
+				oos.writeObject(msg2proxy);				
+				//System.out.println("serverSettings: writeObj passed");
+				
+				// Read and display the response message sent by server application
+				ObjectInputStream is = new ObjectInputStream(socket2server.getInputStream());
+				Object c = is.readObject();
+
+				if(c == null){
+					Log.w("ServerSetting", "failed to get server address");
+					return;
+				}
+				//System.out.println("ServerSettings: read obj from server");
+				//os.close();
+				//is.close();
+
+				/*
+				Log.w("ServerSetting", "recv: "+(String)c);
+				
+				String[] splits = ((String)c).split(":");
+				//serverAddress = splits[0];
+				serverPort    = Integer.parseInt(splits[1]);
+				Log.w("ServerSetting", splits[0]);
+				String tmp = splits[0].replace('.', ':');
+				Log.w("ServerSetting", "temp="+tmp);
+			
+				String[]s = tmp.split(":");
+				Log.w("ServerSetting", String.valueOf(s.length));
+				serverAddress = s[0].substring(4);
+				serverAddress=serverAddress.replace('-', '.');
+				
+				
+				try {
+					InetAddress test=InetAddress.getByName(serverAddress);
+					Log.w("serverSetting", test.getHostAddress());
+				} catch (UnknownHostException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				
+				socket2server = new Socket(serverAddress,serverPort);
+				oos = new ObjectOutputStream(socket2server.getOutputStream());
+				ois = new ObjectInputStream(socket2server.getInputStream());
+			*/	
+			} catch (UnknownHostException e) {
+				e.printStackTrace();
+			} catch (IOException e) {
+				e.printStackTrace();
+			} catch (ClassNotFoundException e) {
+				e.printStackTrace();
+			}
+			
+			this.finish();
+			break;
+		case R.id.settingsCancel:
+			this.finish();
+			break;
+		}
+	}
+	
+
+

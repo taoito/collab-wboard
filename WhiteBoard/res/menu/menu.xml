@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+	<item android:id="@+id/upload" android:title="Start New Project" />
+	<item android:id="@+id/download" android:title="Get Project" />
+	<item 
+		android:id="@+id/settings" 
+		android:title="Settings" 
+		android:icon="@drawable/settings3" 	
+	/> 
+	<item android:id="@+id/refresh" android:title="Refresh" />
+	<item android:id="@+id/serversettings" android:title="Server Settings"></item>
+	<item android:id="@+id/newscreen" android:title="New Whiteboard" />
+	<item android:id="@+id/colorpicker" android:title="Choose Color" />
+</menu>
+<!-- 
+		android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:text="Tiny"
+        android:textSize="8sp" -->

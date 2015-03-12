@@ -1,0 +1,14 @@
+#Fat Jar Configuration File
+#Sat Nov 19 15:05:23 CST 2011
+onejar.license.required=true
+manifest.classpath=
+manifest.removesigners=true
+onejar.checkbox=false
+jarname=WhiteBoardServer.jar
+manifest.mergeall=true
+manifest.mainclass=
+manifest.file=MANIFEST.MF
+jarname.isextern=false
+onejar.expand=
+excludes=<po|WhiteBoardServer>~.svn/;<po|WhiteBoardServer>~.DS_Store
+includes=

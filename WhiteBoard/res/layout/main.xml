@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	android:orientation="vertical" android:background="#ffffff">
+	<TextView android:id="@+id/status" android:text = "Status:" android:layout_width="fill_parent"
+	android:layout_height="wrap_content"></TextView>
+	<View android:layout_width="fill_parent" android:layout_height="1dp"
+		android:background="#ffcccccc"></View>
+	<edu.umn.whiteboard.WhiteboardCanvas
+		android:layout_width="fill_parent" android:layout_height="fill_parent"
+		android:layout_weight="1" android:background="@drawable/backgroundtile" android:id="@+id/canvas"></edu.umn.whiteboard.WhiteboardCanvas>
+	<View android:layout_width="fill_parent" android:layout_height="1dp"
+		android:background="#ffcccccc"></View>
+	<HorizontalScrollView android:layout_width="wrap_content"
+		android:background="#ffffff" android:layout_height="wrap_content"
+		android:layout_gravity="center" android:id="@+id/horizontalscroll">
+		<LinearLayout android:id="@+id/toolbar"
+			android:orientation="horizontal" android:layout_width="wrap_content"
+			android:layout_height="wrap_content">
+		</LinearLayout>
+	</HorizontalScrollView>
+</LinearLayout>
